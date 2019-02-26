@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinJson.Views.MainView"
+			 xmlns:vm="clr-namespace:XamarinJson.ViewModels"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v18.2"
+             xmlns:behaviors="clr-namespace:XamarinJson.Behaviors"
+			 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 ios:Page.UseSafeArea="True">
+    
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--ColumnsAutoWidth="False"  가로 스크롤 사용하려면 False-->
+        <dxGrid:GridControl x:Name="grid" 
+                                Grid.Row="1" 
+                                Grid.ColumnSpan="4"
+                                ItemsSource="{Binding EmployeeList}" 
+						        SortMode="Single" 
+                                RowHeight="50"
+                                ColumnsAutoWidth="False" 
+                                ColumnHeadersHeight="40"
+                                AllowEditRows="False"
+                                AllowDeleteRows="False"
+                                AllowGroup="False"
+                                AllowGroupCollapse="False"
+                                AllowResizeColumns="True"
+                                AllowSort="True"
+                                IsRowCellMenuEnabled ="False"
+                                AllowHorizontalScrollingVirtualization="False"
+                                AutoGenerateColumnsMode="None"
+                                IsColumnChooserEnabled="False"
+                                IsColumnMenuEnabled="False"
+                                IsPullToRefreshEnabled="True"
+                                PullToRefreshCommand="{Binding PullToRefreshCommand}">
+
+            <dxGrid:GridControl.Columns>
+                <!-- Empno -->
+                <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="EmpNo" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+                <!-- Ename -->
+                <dxGrid:TemplateColumn FieldName="Ename" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="Ename" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+                <!-- Sal -->
+                <dxGrid:TemplateColumn FieldName="Sal" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="Sal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+                <!-- Job -->
+                <dxGrid:TemplateColumn FieldName="Job" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="Job" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+            </dxGrid:GridControl.Columns>
+
+        </dxGrid:GridControl>
+        <Button
+			Grid.Row="2"
+			Grid.Column="0"
+			Text="Delete"
+			Command="{Binding DeleteCommand}"/>
+
+
+        <Button
+			Grid.Row="2"
+			Grid.Column="1"
+			Text="조회"
+			Command="{Binding SearchCommand}"/>
+    </Grid>
+</ContentPage>
