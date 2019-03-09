@@ -16,7 +16,7 @@ namespace XamarinJson
 #endif
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainView();
         }
 
         protected override void OnStart()

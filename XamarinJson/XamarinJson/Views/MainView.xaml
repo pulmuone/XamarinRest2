@@ -11,8 +11,7 @@
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
-
-
+    
     <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
@@ -51,7 +50,7 @@
 
             <dxGrid:GridControl.Columns>
                 <!-- Empno -->
-                <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True">
                     <dxGrid:TemplateColumn.HeaderTemplate>
                         <DataTemplate>
                             <Label Text="EmpNo" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
@@ -65,10 +64,10 @@
                 </dxGrid:TemplateColumn>
 
                 <!-- Ename -->
-                <dxGrid:TemplateColumn FieldName="Ename" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                <dxGrid:TemplateColumn FieldName="Ename" Width="115" ContentAlignment="Start" IsReadOnly="True" >
                     <dxGrid:TemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <Label Text="Ename" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                            <Label Text="이름" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
                         </DataTemplate>
                     </dxGrid:TemplateColumn.HeaderTemplate>
                     <dxGrid:TemplateColumn.DisplayTemplate>
@@ -79,7 +78,7 @@
                 </dxGrid:TemplateColumn>
 
                 <!-- Sal -->
-                <dxGrid:TemplateColumn FieldName="Sal" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                <dxGrid:TemplateColumn FieldName="Sal" Width="115" ContentAlignment="Start" IsReadOnly="False" >
                     <dxGrid:TemplateColumn.HeaderTemplate>
                         <DataTemplate>
                             <Label Text="Sal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
@@ -87,13 +86,18 @@
                     </dxGrid:TemplateColumn.HeaderTemplate>
                     <dxGrid:TemplateColumn.DisplayTemplate>
                         <DataTemplate>
-                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <!--<Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>-->
+                            <Entry Text="{Binding Value, Mode=TwoWay}">
+                                <Entry.Behaviors>
+                                    
+                                </Entry.Behaviors>
+                            </Entry>
                         </DataTemplate>
                     </dxGrid:TemplateColumn.DisplayTemplate>
                 </dxGrid:TemplateColumn>
 
                 <!-- Job -->
-                <dxGrid:TemplateColumn FieldName="Job" Width="115" ContentAlignment="Start" IsReadOnly="True" FixedStyle="Left">
+                <dxGrid:TemplateColumn FieldName="Job" Width="115" ContentAlignment="Start" IsReadOnly="True">
                     <dxGrid:TemplateColumn.HeaderTemplate>
                         <DataTemplate>
                             <Label Text="Job" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
@@ -121,5 +125,14 @@
 			Grid.Column="1"
 			Text="조회"
 			Command="{Binding SearchCommand}"/>
+
+        <Entry Grid.Row="2" Grid.Column="2"
+                   Text="{Binding RouteCode}">
+            <Entry.Behaviors>
+                    <behaviors:EventToCommandBehavior
+							EventName="Completed"
+							Command="{Binding EntryCompletedCommand}"/>
+                </Entry.Behaviors>
+        </Entry>
     </Grid>
 </ContentPage>
