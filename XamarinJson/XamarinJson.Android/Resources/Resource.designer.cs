@@ -40,8 +40,10 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.design_bottom_sheet_slide_out = global::XamarinJson.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.design_snackbar_in = global::XamarinJson.Droid.Resource.Animation.design_snackbar_in;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.design_snackbar_out = global::XamarinJson.Droid.Resource.Animation.design_snackbar_out;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.tooltip_enter = global::XamarinJson.Droid.Resource.Animation.tooltip_enter;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.tooltip_exit = global::XamarinJson.Droid.Resource.Animation.tooltip_exit;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.EnterFromLeft = global::XamarinJson.Droid.Resource.Animation.EnterFromLeft;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.EnterFromRight = global::XamarinJson.Droid.Resource.Animation.EnterFromRight;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.ExitToLeft = global::XamarinJson.Droid.Resource.Animation.ExitToLeft;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Animation.ExitToRight = global::XamarinJson.Droid.Resource.Animation.ExitToRight;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Animator.design_appbar_state_list_animator = global::XamarinJson.Droid.Resource.Animator.design_appbar_state_list_animator;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.actionBarDivider = global::XamarinJson.Droid.Resource.Attribute.actionBarDivider;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.actionBarItemBackground = global::XamarinJson.Droid.Resource.Attribute.actionBarItemBackground;
@@ -370,7 +372,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::XamarinJson.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::XamarinJson.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.textColorAlertDialogListItem = global::XamarinJson.Droid.Resource.Attribute.textColorAlertDialogListItem;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.textColorError = global::XamarinJson.Droid.Resource.Attribute.textColorError;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.textColorSearchUrl = global::XamarinJson.Droid.Resource.Attribute.textColorSearchUrl;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.theme = global::XamarinJson.Droid.Resource.Attribute.theme;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Attribute.thickness = global::XamarinJson.Droid.Resource.Attribute.thickness;
@@ -417,8 +418,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::XamarinJson.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::XamarinJson.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::XamarinJson.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::XamarinJson.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::XamarinJson.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::XamarinJson.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::XamarinJson.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::XamarinJson.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
@@ -478,7 +477,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.dim_foreground_disabled_material_light = global::XamarinJson.Droid.Resource.Color.dim_foreground_disabled_material_light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.dim_foreground_material_dark = global::XamarinJson.Droid.Resource.Color.dim_foreground_material_dark;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.dim_foreground_material_light = global::XamarinJson.Droid.Resource.Color.dim_foreground_material_light;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.error_color_material = global::XamarinJson.Droid.Resource.Color.error_color_material;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.foreground_material_dark = global::XamarinJson.Droid.Resource.Color.foreground_material_dark;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.foreground_material_light = global::XamarinJson.Droid.Resource.Color.foreground_material_light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Color.gray = global::XamarinJson.Droid.Resource.Color.gray;
@@ -534,7 +532,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_progress_bar_size = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::XamarinJson.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
@@ -1077,6 +1074,8 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.beginning = global::XamarinJson.Droid.Resource.Id.beginning;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.blocking = global::XamarinJson.Droid.Resource.Id.blocking;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.bottom = global::XamarinJson.Droid.Resource.Id.bottom;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.bottomtab_navarea = global::XamarinJson.Droid.Resource.Id.bottomtab_navarea;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.bottomtab_tabbar = global::XamarinJson.Droid.Resource.Id.bottomtab_tabbar;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.buttonPanel = global::XamarinJson.Droid.Resource.Id.buttonPanel;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.cancel_action = global::XamarinJson.Droid.Resource.Id.cancel_action;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.center = global::XamarinJson.Droid.Resource.Id.center;
@@ -1112,6 +1111,8 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.fill_horizontal = global::XamarinJson.Droid.Resource.Id.fill_horizontal;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.fill_vertical = global::XamarinJson.Droid.Resource.Id.fill_vertical;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.@fixed = global::XamarinJson.Droid.Resource.Id.@fixed;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.flyoutcontent_appbar = global::XamarinJson.Droid.Resource.Id.flyoutcontent_appbar;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.flyoutcontent_recycler = global::XamarinJson.Droid.Resource.Id.flyoutcontent_recycler;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.forever = global::XamarinJson.Droid.Resource.Id.forever;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.ghost_view = global::XamarinJson.Droid.Resource.Id.ghost_view;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.home = global::XamarinJson.Droid.Resource.Id.home;
@@ -1130,6 +1131,10 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.line3 = global::XamarinJson.Droid.Resource.Id.line3;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.listMode = global::XamarinJson.Droid.Resource.Id.listMode;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.list_item = global::XamarinJson.Droid.Resource.Id.list_item;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.main_appbar = global::XamarinJson.Droid.Resource.Id.main_appbar;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.main_scrollview = global::XamarinJson.Droid.Resource.Id.main_scrollview;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.main_tablayout = global::XamarinJson.Droid.Resource.Id.main_tablayout;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.main_toolbar = global::XamarinJson.Droid.Resource.Id.main_toolbar;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.masked = global::XamarinJson.Droid.Resource.Id.masked;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.media_actions = global::XamarinJson.Droid.Resource.Id.media_actions;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.message = global::XamarinJson.Droid.Resource.Id.message;
@@ -1199,6 +1204,9 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.search_src_text = global::XamarinJson.Droid.Resource.Id.search_src_text;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.search_voice_btn = global::XamarinJson.Droid.Resource.Id.search_voice_btn;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.select_dialog_listview = global::XamarinJson.Droid.Resource.Id.select_dialog_listview;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.shellcontent_appbar = global::XamarinJson.Droid.Resource.Id.shellcontent_appbar;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.shellcontent_scrollview = global::XamarinJson.Droid.Resource.Id.shellcontent_scrollview;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.shellcontent_toolbar = global::XamarinJson.Droid.Resource.Id.shellcontent_toolbar;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.shortcut = global::XamarinJson.Droid.Resource.Id.shortcut;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.showCustom = global::XamarinJson.Droid.Resource.Id.showCustom;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Id.showHome = global::XamarinJson.Droid.Resource.Id.showHome;
@@ -1287,6 +1295,7 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::XamarinJson.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.abc_search_view = global::XamarinJson.Droid.Resource.Layout.abc_search_view;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.abc_select_dialog_material = global::XamarinJson.Droid.Resource.Layout.abc_select_dialog_material;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.BottomTabLayout = global::XamarinJson.Droid.Resource.Layout.BottomTabLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_bottom_navigation_item = global::XamarinJson.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_bottom_sheet_dialog = global::XamarinJson.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_layout_snackbar = global::XamarinJson.Droid.Resource.Layout.design_layout_snackbar;
@@ -1301,6 +1310,7 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_navigation_menu = global::XamarinJson.Droid.Resource.Layout.design_navigation_menu;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_navigation_menu_item = global::XamarinJson.Droid.Resource.Layout.design_navigation_menu_item;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.design_text_input_password_icon = global::XamarinJson.Droid.Resource.Layout.design_text_input_password_icon;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.FlyoutContent = global::XamarinJson.Droid.Resource.Layout.FlyoutContent;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.mr_chooser_dialog = global::XamarinJson.Droid.Resource.Layout.mr_chooser_dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.mr_chooser_list_item = global::XamarinJson.Droid.Resource.Layout.mr_chooser_list_item;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.mr_controller_material_dialog_b = global::XamarinJson.Droid.Resource.Layout.mr_controller_material_dialog_b;
@@ -1322,11 +1332,12 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.notification_template_media_custom = global::XamarinJson.Droid.Resource.Layout.notification_template_media_custom;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.notification_template_part_chronometer = global::XamarinJson.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.notification_template_part_time = global::XamarinJson.Droid.Resource.Layout.notification_template_part_time;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.RootLayout = global::XamarinJson.Droid.Resource.Layout.RootLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.select_dialog_item_material = global::XamarinJson.Droid.Resource.Layout.select_dialog_item_material;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.select_dialog_multichoice_material = global::XamarinJson.Droid.Resource.Layout.select_dialog_multichoice_material;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.select_dialog_singlechoice_material = global::XamarinJson.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.ShellContent = global::XamarinJson.Droid.Resource.Layout.ShellContent;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::XamarinJson.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Layout.tooltip = global::XamarinJson.Droid.Resource.Layout.tooltip;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.String.abc_action_bar_home_description = global::XamarinJson.Droid.Resource.String.abc_action_bar_home_description;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.String.abc_action_bar_up_description = global::XamarinJson.Droid.Resource.String.abc_action_bar_up_description;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.String.abc_action_menu_overflow_description = global::XamarinJson.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -1471,18 +1482,11 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::XamarinJson.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::XamarinJson.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::XamarinJson.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::XamarinJson.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_Theme_AppCompat = global::XamarinJson.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::XamarinJson.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V22_Theme_AppCompat = global::XamarinJson.Droid.Resource.Style.Base_V22_Theme_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V23_Theme_AppCompat = global::XamarinJson.Droid.Resource.Style.Base_V23_Theme_AppCompat;
@@ -1490,7 +1494,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V26_Theme_AppCompat = global::XamarinJson.Droid.Resource.Style.Base_V26_Theme_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V26_Theme_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::XamarinJson.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::XamarinJson.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V7_Theme_AppCompat = global::XamarinJson.Droid.Resource.Style.Base_V7_Theme_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::XamarinJson.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
@@ -1556,7 +1559,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::XamarinJson.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::XamarinJson.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::XamarinJson.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_Widget_Design_AppBarLayout = global::XamarinJson.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Base_Widget_Design_TabLayout = global::XamarinJson.Droid.Resource.Style.Base_Widget_Design_TabLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.CardView = global::XamarinJson.Droid.Resource.Style.CardView;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.CardView_Dark = global::XamarinJson.Droid.Resource.Style.CardView_Dark;
@@ -1574,10 +1576,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::XamarinJson.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::XamarinJson.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V11_AppCompat = global::XamarinJson.Droid.Resource.Style.Platform_V11_AppCompat;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V11_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Platform_V11_AppCompat_Light;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V14_AppCompat = global::XamarinJson.Droid.Resource.Style.Platform_V14_AppCompat;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V14_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Platform_V14_AppCompat_Light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V21_AppCompat = global::XamarinJson.Droid.Resource.Style.Platform_V21_AppCompat;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V21_AppCompat_Light = global::XamarinJson.Droid.Resource.Style.Platform_V21_AppCompat_Light;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Platform_V25_AppCompat = global::XamarinJson.Droid.Resource.Style.Platform_V25_AppCompat;
@@ -1786,7 +1784,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_BottomNavigationView = global::XamarinJson.Droid.Resource.Style.Widget_Design_BottomNavigationView;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::XamarinJson.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::XamarinJson.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_CoordinatorLayout = global::XamarinJson.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_FloatingActionButton = global::XamarinJson.Droid.Resource.Style.Widget_Design_FloatingActionButton;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_NavigationView = global::XamarinJson.Droid.Resource.Style.Widget_Design_NavigationView;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::XamarinJson.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
@@ -2075,7 +2072,6 @@ namespace XamarinJson.Droid
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DesignTheme = global::XamarinJson.Droid.Resource.Styleable.DesignTheme;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::XamarinJson.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::XamarinJson.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
-			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DesignTheme_textColorError = global::XamarinJson.Droid.Resource.Styleable.DesignTheme_textColorError;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DrawerArrowToggle = global::XamarinJson.Droid.Resource.Styleable.DrawerArrowToggle;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::XamarinJson.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
 			global::DevExpress.Mobile.DataGrid.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::XamarinJson.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;

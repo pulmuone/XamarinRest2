@@ -26,6 +26,7 @@
         </Grid.ColumnDefinitions>
 
         <!--ColumnsAutoWidth="False"  가로 스크롤 사용하려면 False-->
+        <!--RowTapCommand=""-->
         <dxGrid:GridControl x:Name="grid" 
                                 Grid.Row="1" 
                                 Grid.ColumnSpan="4"
@@ -46,8 +47,8 @@
                                 IsColumnChooserEnabled="False"
                                 IsColumnMenuEnabled="False"
                                 IsPullToRefreshEnabled="True"
+                                SelectedDataObject="{Binding SelectedEmployee}"
                                 PullToRefreshCommand="{Binding PullToRefreshCommand}">
-
             <dxGrid:GridControl.Columns>
                 <!-- Empno -->
                 <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True">
@@ -112,6 +113,18 @@
 
             </dxGrid:GridControl.Columns>
 
+            <dxGrid:GridControl.Behaviors>
+                <!--<behaviors:EventToCommandBehavior
+							EventName="RowTap"
+							Command="{Binding GridRowTapCommand}"
+							CommandParameter="{Binding DevExpress.Mobile.DataGrid.RowTapEventArgs}"/>-->
+
+                <behaviors:EventToCommandBehavior
+							EventName="RowDoubleTap"
+							Command="{Binding GridRowDoubleTapCommand}"
+							CommandParameter="{Binding DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs}"/>
+            </dxGrid:GridControl.Behaviors>
+
         </dxGrid:GridControl>
         <Button
 			Grid.Row="2"
@@ -124,15 +137,20 @@
 			Grid.Row="2"
 			Grid.Column="1"
 			Text="조회"
-			Command="{Binding SearchCommand}"/>
+			Command="{Binding SearchCommand}"
+            CommandParameter="."/>
 
-        <Entry Grid.Row="2" Grid.Column="2"
-                   Text="{Binding RouteCode}">
-            <Entry.Behaviors>
+        <Entry x:Name="EntryID" 
+               Grid.Row="2" Grid.Column="2"
+               Text="{Binding RouteCode, Mode=TwoWay}"
+               ReturnCommand="EntryCompletedCommand"
+               ReturnCommandParameter="{x:Reference EntryID}">
+            <!--<Entry.Behaviors>
                     <behaviors:EventToCommandBehavior
 							EventName="Completed"
-							Command="{Binding EntryCompletedCommand}"/>
-                </Entry.Behaviors>
+							Command="{Binding EntryCompletedCommand}"
+                            CommandParameter="{x:Reference EntryID}"/>
+                </Entry.Behaviors>-->
         </Entry>
     </Grid>
 </ContentPage>

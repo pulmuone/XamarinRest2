@@ -10,9 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Mobile.Grid" Version="18.2.1" />
+    <PackageReference Include="DevExpress.Mobile.Grid" Version="18.2.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Plugin.Permissions" Version="4.0.4-beta" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="Xam.Plugins.Settings" Version="4.0.0.10-beta" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.135214-pre4" />
