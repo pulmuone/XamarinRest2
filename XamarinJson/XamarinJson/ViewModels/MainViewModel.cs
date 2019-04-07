@@ -64,10 +64,7 @@ namespace XamarinJson.ViewModels
             Console.WriteLine(SelectedRow);
 
             //SelectedData = null;
-            SelectedRow = -1;
-
-            Console.WriteLine(SelectedRow);
-
+            //SelectedRow = -1;
         }
 
         private void EntryRouteCode(object obj)
@@ -87,10 +84,10 @@ namespace XamarinJson.ViewModels
 
         private async Task DeleteAsync()
         {
-            if(_employee != null)
-            {
-                await ResourceService.GetInstance().DeleteResouce<Employee>(_employee.Empno);
-            }
+            //if(_employee != null)
+            //{
+            //    await ResourceService.GetInstance().DeleteResouce<Employee>(_employee.Empno);
+            //}
         }
 
         private async Task Search()
