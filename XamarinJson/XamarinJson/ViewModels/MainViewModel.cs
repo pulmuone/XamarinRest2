@@ -26,13 +26,17 @@ namespace XamarinJson.ViewModels
 
         public ICommand GridRowDoubleTapCommand { get; }
 
+        public ICommand GridRowTapCommand { get; }
+
         public ICommand EntryCompletedCommand { get; }
 
         private Employee _employee = new Employee();
 
         private string _routeCode = string.Empty;
 
-        private Employee _selectedEmployee;
+        private Employee _selectedData = new Employee();
+
+        private int _selectedRow;
 
         public MainViewModel()
         {
@@ -43,14 +47,27 @@ namespace XamarinJson.ViewModels
             EntryCompletedCommand = new Command<Entry>((obj) => EntryRouteCode(obj));
 
             GridRowDoubleTapCommand = new Command<DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs>((e) => GridDoubleRowTap(e));
+            GridRowTapCommand = new Command<DevExpress.Mobile.DataGrid.RowTapEventArgs>((e) => GridRowTap(e));
         }
 
-        private void GridDoubleRowTap(RowDoubleTapEventArgs e)
+        private void GridRowTap(RowTapEventArgs e)
         {
             Debug.WriteLine(e.RowHandle);
             Debug.WriteLine(e.FieldName);
 
-            Debug.WriteLine(SelectedEmployee.Ename);
+            //Debug.WriteLine(SelectedEmployee.Ename);
+        }
+
+        private void GridDoubleRowTap(DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs e)
+        {
+            Console.WriteLine(SelectedData.Ename);
+            Console.WriteLine(SelectedRow);
+
+            //SelectedData = null;
+            SelectedRow = -1;
+
+            Console.WriteLine(SelectedRow);
+
         }
 
         private void EntryRouteCode(object obj)
@@ -80,11 +97,18 @@ namespace XamarinJson.ViewModels
         {
             string responseResult = string.Empty;
             string requestParamJson = string.Empty;
-            
+
             //EmployeeList2 = new ObservableCollection<Employee>(await ResourceService.GetInstance().GetResources<Employee>());
 
+            List<Employee> lstEmp = new List<Employee>();
+
+            lstEmp.Add(new Employee(1, "홍길동", 1000, "개발자"));
+            lstEmp.Add(new Employee(2, "박찬호", 2000, "야구"));
+            lstEmp.Add(new Employee(3, "이순신", 3000, "군인"));
+
             EmployeeList.Clear();
-            EmployeeList.AddRange(await ResourceService.GetInstance().GetResources<Employee>(), System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
+            EmployeeList.AddRange(lstEmp, System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
+            //EmployeeList.AddRange(await ResourceService.GetInstance().GetResources<Employee>(), System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
         }
 
         private async Task Login()
@@ -92,11 +116,14 @@ namespace XamarinJson.ViewModels
             Settings.AuthToken = await BaseHttpService.Instance.AuthorizationAsync("admin", "1234");
 
             Debug.WriteLine(Settings.AuthToken);
+            
         }
 
         public string RouteCode { get => _routeCode; set => SetProperty(ref _routeCode, value); }
 
-        public Employee SelectedEmployee { get => _selectedEmployee; set => SetProperty(ref _selectedEmployee, value); }
+        
+        public int SelectedRow { get => _selectedRow; set => SetProperty(ref _selectedRow, value); }
+        public Employee SelectedData { get => _selectedData; set => SetProperty(ref _selectedData, value); }
 
         public ObservableRangeCollection<Employee> EmployeeList { get => _employeeList; set => SetProperty(ref this._employeeList, value); }
 

@@ -11,146 +11,150 @@
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
-    
-    <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <!--ColumnsAutoWidth="False"  가로 스크롤 사용하려면 False-->
-        <!--RowTapCommand=""-->
-        <dxGrid:GridControl x:Name="grid" 
-                                Grid.Row="1" 
-                                Grid.ColumnSpan="4"
-                                ItemsSource="{Binding EmployeeList}" 
-						        SortMode="Single" 
-                                RowHeight="50"
-                                ColumnsAutoWidth="False" 
-                                ColumnHeadersHeight="40"
-                                AllowEditRows="False"
-                                AllowDeleteRows="False"
-                                AllowGroup="False"
-                                AllowGroupCollapse="False"
-                                AllowResizeColumns="True"
-                                AllowSort="True"
-                                IsRowCellMenuEnabled ="False"
-                                AllowHorizontalScrollingVirtualization="False"
-                                AutoGenerateColumnsMode="None"
-                                IsColumnChooserEnabled="False"
-                                IsColumnMenuEnabled="False"
-                                IsPullToRefreshEnabled="True"
-                                SelectedDataObject="{Binding SelectedEmployee}"
-                                PullToRefreshCommand="{Binding PullToRefreshCommand}">
-            <dxGrid:GridControl.Columns>
-                <!-- Empno -->
-                <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True">
-                    <dxGrid:TemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <Label Text="EmpNo" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.HeaderTemplate>
-                    <dxGrid:TemplateColumn.DisplayTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.DisplayTemplate>
-                </dxGrid:TemplateColumn>
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <!-- Ename -->
-                <dxGrid:TemplateColumn FieldName="Ename" Width="115" ContentAlignment="Start" IsReadOnly="True" >
-                    <dxGrid:TemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <Label Text="이름" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.HeaderTemplate>
-                    <dxGrid:TemplateColumn.DisplayTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.DisplayTemplate>
-                </dxGrid:TemplateColumn>
+            <!--ColumnsAutoWidth="False"  가로 스크롤 사용하려면 False-->
+            <!--RowTapCommand=""-->
+            <dxGrid:GridControl x:Name="grid" 
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="4"
+                            ItemsSource="{Binding EmployeeList}" 
+						    SortMode="Single" 
+                            RowHeight="50"
+                            ColumnsAutoWidth="False" 
+                            ColumnHeadersHeight="40"
+                            AllowEditRows="False"
+                            AllowDeleteRows="False"
+                            AllowGroup="False"
+                            AllowGroupCollapse="False"
+                            AllowResizeColumns="True"
+                            AllowSort="True"
+                            IsRowCellMenuEnabled ="False"
+                            AllowHorizontalScrollingVirtualization="False"
+                            AutoGenerateColumnsMode="None"
+                            IsColumnChooserEnabled="False"
+                            IsColumnMenuEnabled="False"
+                            IsPullToRefreshEnabled="False"
+                            SelectedRowHandle="{Binding SelectedRow, Mode=TwoWay}"
+                            SelectedDataObject="{Binding SelectedData, Mode=TwoWay}">
+                <dxGrid:GridControl.Columns>
+                    <!-- Empno -->
+                    <dxGrid:TemplateColumn FieldName="Empno" Width="115" ContentAlignment="Start" IsReadOnly="True">
+                        <dxGrid:TemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="EmpNo" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.HeaderTemplate>
+                        <dxGrid:TemplateColumn.DisplayTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.DisplayTemplate>
+                    </dxGrid:TemplateColumn>
 
-                <!-- Sal -->
-                <dxGrid:TemplateColumn FieldName="Sal" Width="115" ContentAlignment="Start" IsReadOnly="False" >
-                    <dxGrid:TemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <Label Text="Sal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.HeaderTemplate>
-                    <dxGrid:TemplateColumn.DisplayTemplate>
-                        <DataTemplate>
-                            <!--<Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>-->
-                            <Entry Text="{Binding Value, Mode=TwoWay}">
+                    <!-- Ename -->
+                    <dxGrid:TemplateColumn FieldName="Ename" Width="115" ContentAlignment="Start" IsReadOnly="True" >
+                        <dxGrid:TemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="이름" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.HeaderTemplate>
+                        <dxGrid:TemplateColumn.DisplayTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.DisplayTemplate>
+                    </dxGrid:TemplateColumn>
+
+                    <!-- Sal -->
+                    <dxGrid:TemplateColumn FieldName="Sal" Width="115" ContentAlignment="Start" IsReadOnly="True" >
+                        <dxGrid:TemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="Sal" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.HeaderTemplate>
+                        <dxGrid:TemplateColumn.DisplayTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                <!--<Entry Text="{Binding Value}">
                                 <Entry.Behaviors>
                                     
                                 </Entry.Behaviors>
-                            </Entry>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.DisplayTemplate>
-                </dxGrid:TemplateColumn>
+                            </Entry>-->
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.DisplayTemplate>
+                    </dxGrid:TemplateColumn>
 
-                <!-- Job -->
-                <dxGrid:TemplateColumn FieldName="Job" Width="115" ContentAlignment="Start" IsReadOnly="True">
-                    <dxGrid:TemplateColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <Label Text="Job" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.HeaderTemplate>
-                    <dxGrid:TemplateColumn.DisplayTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                        </DataTemplate>
-                    </dxGrid:TemplateColumn.DisplayTemplate>
-                </dxGrid:TemplateColumn>
+                    <!-- Job -->
+                    <dxGrid:TemplateColumn FieldName="Job" Width="115" ContentAlignment="Start" IsReadOnly="True">
+                        <dxGrid:TemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="Job" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="Bold"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.HeaderTemplate>
+                        <dxGrid:TemplateColumn.DisplayTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            </DataTemplate>
+                        </dxGrid:TemplateColumn.DisplayTemplate>
+                    </dxGrid:TemplateColumn>
 
-            </dxGrid:GridControl.Columns>
+                </dxGrid:GridControl.Columns>
 
-            <dxGrid:GridControl.Behaviors>
-                <!--<behaviors:EventToCommandBehavior
+                <dxGrid:GridControl.Behaviors>
+                    <!--AllowEditRows="True" 해도 작동됨.-->
+                    <!--<behaviors:EventToCommandBehavior
 							EventName="RowTap"
 							Command="{Binding GridRowTapCommand}"
 							CommandParameter="{Binding DevExpress.Mobile.DataGrid.RowTapEventArgs}"/>-->
 
-                <behaviors:EventToCommandBehavior
+                    <!--AllowEditRows="False" 이 조건에서만 작동됨.-->
+                    <behaviors:EventToCommandBehavior
 							EventName="RowDoubleTap"
 							Command="{Binding GridRowDoubleTapCommand}"
-							CommandParameter="{Binding DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs}"/>
-            </dxGrid:GridControl.Behaviors>
+                            CommandParameter="{Binding DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs}"/>
+                </dxGrid:GridControl.Behaviors>
 
-        </dxGrid:GridControl>
-        <Button
+            </dxGrid:GridControl>
+            <Button
 			Grid.Row="2"
 			Grid.Column="0"
 			Text="Delete"
 			Command="{Binding DeleteCommand}"/>
 
 
-        <Button
+            <Button
 			Grid.Row="2"
 			Grid.Column="1"
-			Text="조회"
+			Text="Search"
 			Command="{Binding SearchCommand}"
             CommandParameter="."/>
 
-        <Entry x:Name="EntryID" 
+            <Entry x:Name="EntryID" 
                Grid.Row="2" Grid.Column="2"
                Text="{Binding RouteCode, Mode=TwoWay}"
-               ReturnCommand="EntryCompletedCommand"
+               ReturnCommand="{Binding EntryCompletedCommand}"
                ReturnCommandParameter="{x:Reference EntryID}">
-            <!--<Entry.Behaviors>
+                <!--<Entry.Behaviors>
                     <behaviors:EventToCommandBehavior
 							EventName="Completed"
 							Command="{Binding EntryCompletedCommand}"
                             CommandParameter="{x:Reference EntryID}"/>
                 </Entry.Behaviors>-->
-        </Entry>
-    </Grid>
+            </Entry>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

@@ -8,12 +8,8 @@
 			 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
 			 ios:Page.UseSafeArea="True"             
 			 x:Class="XamarinJson.MainPage">
-	<!--<ContentPage.Padding>
-		<OnPlatform x:TypeArguments="Thickness"
-					iOS="0, 20, 0, 0"
-					Android="0"/>
-	</ContentPage.Padding>-->
-	<ContentPage.BindingContext>
+	
+    <ContentPage.BindingContext>
 		<vm:MainViewModel/>
 	</ContentPage.BindingContext>
 	
