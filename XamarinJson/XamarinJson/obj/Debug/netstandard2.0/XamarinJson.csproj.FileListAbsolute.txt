@@ -1,0 +1,15 @@
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\bin\Debug\netstandard2.0\XamarinJson.deps.json
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\bin\Debug\netstandard2.0\XamarinJson.dll
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\bin\Debug\netstandard2.0\XamarinJson.pdb
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\Views\MainView.xaml.g.cs
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.csproj.CoreCompileInputs.cache
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.AssemblyMetadataInputs.cache
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.AssemblyMetadata.cs
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.AssemblyInfoInputs.cache
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.AssemblyInfo.cs
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.dll
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.pdb
+E:\Study\Xamarin\XamarinRest\XamarinJson\XamarinJson\obj\Debug\netstandard2.0\XamarinJson.csprojAssemblyReference.cache

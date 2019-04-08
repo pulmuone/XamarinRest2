@@ -29,38 +29,18 @@
 			Grid.Row="1"
 			Grid.Column="0"
 			Grid.ColumnSpan="2"
-			ItemsSource="{Binding EmployeeList}" >
+			ItemsSource="{Binding EmployeeList2}" >
             <ListView.Behaviors>
                 <behaviors:EventToCommandBehavior
 							EventName="ItemSelected"
 							Command="{Binding ListViewTappedCommand}"
                             CommandParameter="{Binding SelectedItemChangedEventArgs}"/>
             </ListView.Behaviors>
-
-			<ListView.Header>
-				<Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
-				    <Grid.ColumnDefinitions>
-					    <ColumnDefinition Width="1*"/>
-					    <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-				    <Label Grid.Column="0" Text="사번" HorizontalTextAlignment="Center"/>
-				    <Label Grid.Column="1" Text="이름" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="2" Text="급여" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="3" Text="직업" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="4" Text="직업" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="5" Text="직업" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="6" Text="직업" HorizontalTextAlignment="Center"/>
-                </Grid>
-	        </ListView.Header>
+	
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
-						<Grid RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0, 0, 0, 0">
+						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="1*"/>
 								<ColumnDefinition Width="1*"/>
@@ -75,9 +55,9 @@
                             <Label Grid.Column="1" Text="{Binding Ename}" HorizontalTextAlignment="Center"/>
                             <Label Grid.Column="2" Text="{Binding Sal}" HorizontalTextAlignment="Center"/>
                             <Label Grid.Column="3" Text="{Binding Job}" HorizontalTextAlignment="Center"/>
-                            <Label Grid.Column="4" Text="{Binding Job}" HorizontalTextAlignment="Center"/>
-                            <Label Grid.Column="5" Text="{Binding Job}" HorizontalTextAlignment="Center"/>
-                            <Label Grid.Column="6" Text="{Binding Job}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="4" Text="{Binding Job2}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="5" Text="{Binding Job3}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="6" Text="{Binding Job4}" HorizontalTextAlignment="Center"/>
                         </Grid>
 					</ViewCell>
 				</DataTemplate>
@@ -87,7 +67,7 @@
 		<Button
 			Grid.Row="2"
 			Grid.Column="0"
-			Text="Delete"
+			Text="Clear"
 			Command="{Binding DeleteCommand}"/>
 		
 		
@@ -97,6 +77,17 @@
 			Text="조회"
 			Command="{Binding SearchCommand}"/>
 
-	</Grid>
+        <!-- INDICATOR -->
+        <ActivityIndicator
+                Grid.Row="1" 
+                Grid.ColumnSpan="2"  
+                Color="Red"
+                IsRunning="{Binding IsBusy}"  
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+        </ActivityIndicator>
+
+    </Grid>
 
 </ContentPage>

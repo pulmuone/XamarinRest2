@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -17,8 +18,8 @@ namespace XamarinJson.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private ObservableCollection<Employee> _employeeList2 = new ObservableCollection<Employee>();
-        private ObservableRangeCollection<Employee> _employeeList = new ObservableRangeCollection<Employee>();
+        private ObservableCollection<Employee2> _employeeList2 = new ObservableCollection<Employee2>();
+        private ObservableRangeCollection<Employee2> _employeeList = new ObservableRangeCollection<Employee2>();
         public ICommand LoginCommand { get; } //set을 안두는 이유는 생성자에서만 사용하기 때문에, 생성자 이외의 곳에서 사용할 경우 private set; 추가
         public ICommand SearchCommand { get; }
         public ICommand DeleteCommand { get; }
@@ -38,16 +39,47 @@ namespace XamarinJson.ViewModels
 
         private int _selectedRow;
 
+        List<Employee2> _lstEmp = new List<Employee2>();
+
         public MainViewModel()
         {
             LoginCommand = new Command(async() => await Login());
-            SearchCommand = new Command(async () => await Search());
-            DeleteCommand = new Command(async () => await DeleteAsync());
+
+            SearchCommand = new Command(
+                execute: async () =>
+                {
+                    IsBusy = true;
+                    IsEnabled = false;
+                    RefreshCanExecutesAsync();
+                    //ToDo
+                    await Search();
+
+                    IsEnabled = true;
+                    RefreshCanExecutesAsync();
+                    IsBusy = false;
+                },
+                canExecute: () =>
+                {
+                    return IsEnabled;
+                });
+            
+
+            DeleteCommand = new Command(() => DeleteAsync());
             ListViewTappedCommand = new Command<SelectedItemChangedEventArgs>((obj) => ListViewTapped(obj));
             EntryCompletedCommand = new Command<Entry>((obj) => EntryRouteCode(obj));
 
             GridRowDoubleTapCommand = new Command<DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs>((e) => GridDoubleRowTap(e));
             GridRowTapCommand = new Command<DevExpress.Mobile.DataGrid.RowTapEventArgs>((e) => GridRowTap(e));
+
+            for (int i = 0; i < 1000; i++)
+            {
+                _lstEmp.Add(new Employee2(i, "홍길동", 123456789, "개발자", "개발자", "개발자", "개발자"));
+            }            
+        }
+
+        private void RefreshCanExecutesAsync()
+        {
+            (SearchCommand as Command).ChangeCanExecute();
         }
 
         private void GridRowTap(RowTapEventArgs e)
@@ -82,8 +114,13 @@ namespace XamarinJson.ViewModels
             _employee = obj.SelectedItem as Employee;            
         }
 
-        private async Task DeleteAsync()
+        private void DeleteAsync()
         {
+            //EmployeeList.Clear();
+
+            EmployeeList2 = null;
+            EmployeeList2 = new ObservableCollection<Employee2>();
+
             //if(_employee != null)
             //{
             //    await ResourceService.GetInstance().DeleteResouce<Employee>(_employee.Empno);
@@ -92,20 +129,30 @@ namespace XamarinJson.ViewModels
 
         private async Task Search()
         {
+            //ActivityIndicator 볼려고 3초 기다림
+            await Task.Delay(3000);
+
             string responseResult = string.Empty;
             string requestParamJson = string.Empty;
 
+            //바인딩 시간 체크
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             //EmployeeList2 = new ObservableCollection<Employee>(await ResourceService.GetInstance().GetResources<Employee>());
 
-            List<Employee> lstEmp = new List<Employee>();
+            //시간 : 0.009, 0.0001, 0.0001, 0.0001, 0.0001
+            EmployeeList2 = null;
+            EmployeeList2 = new ObservableCollection<Employee2>(_lstEmp);
 
-            lstEmp.Add(new Employee(1, "홍길동", 1000, "개발자"));
-            lstEmp.Add(new Employee(2, "박찬호", 2000, "야구"));
-            lstEmp.Add(new Employee(3, "이순신", 3000, "군인"));
+            //시간 : 0.13, 0.08, 0.05, 0.04, 0.06
+            //EmployeeList.Clear();
+            //EmployeeList.AddRange(_lstEmp, System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
 
-            EmployeeList.Clear();
-            EmployeeList.AddRange(lstEmp, System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
-            //EmployeeList.AddRange(await ResourceService.GetInstance().GetResources<Employee>(), System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
+            //EmployeeList.AddRange(await ResourceService.GetInstance().GetResources<Employee2>(), System.Collections.Specialized.NotifyCollectionChangedAction.Reset);
+
+            sw.Stop();
+            Debug.WriteLine(sw.Elapsed);
         }
 
         private async Task Login()
@@ -122,8 +169,8 @@ namespace XamarinJson.ViewModels
         public int SelectedRow { get => _selectedRow; set => SetProperty(ref _selectedRow, value); }
         public Employee SelectedData { get => _selectedData; set => SetProperty(ref _selectedData, value); }
 
-        public ObservableRangeCollection<Employee> EmployeeList { get => _employeeList; set => SetProperty(ref this._employeeList, value); }
+        public ObservableRangeCollection<Employee2> EmployeeList { get => _employeeList; set => SetProperty(ref this._employeeList, value); }
 
-        public ObservableCollection<Employee> EmployeeList2 { get => _employeeList2; set => SetProperty(ref this._employeeList2, value); }
+        public ObservableCollection<Employee2> EmployeeList2 { get => _employeeList2; set => SetProperty(ref this._employeeList2, value); }
     }
 }
